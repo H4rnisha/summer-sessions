@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0a0a">
+<title>Summer Sessions '26 · Modo Energy</title>
+<meta name="description" content="Summer Sessions '26. Hosted by Modo Energy. Thursday 11 June 2026, Protein Studios, London.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Summer Sessions '26">
+<meta property="og:description" content="Hosted by Modo Energy. Thursday 11 June 2026, Protein Studios, London.">
+<meta property="og:image" content="https://modoenergy.com/og-image.png">
+<meta property="og:site_name" content="Modo Energy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Summer Sessions '26">
+<meta name="twitter:description" content="Hosted by Modo Energy. Thursday 11 June 2026, Protein Studios, London.">
+
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg-elev: #111111;
+    --fg: #fafafa;
+    --fg-muted: #8a8a8a;
+    --fg-dim: #5a5a5a;
+    --accent: #c7d4e0;
+    --rule: rgba(250, 250, 250, 0.08);
+    --rule-strong: rgba(250, 250, 250, 0.16);
+    --serif: "Times New Roman", "Times", Georgia, "Iowan Old Style", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Menlo", "Consolas", monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    padding: 0 24px;
+  }
+
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 0 96px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 24px 0 0;
+  }
+
+  main > section:first-of-type {
+    padding-top: 48px;
+  }
+
+  .label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin: 0 0 40px;
+    font-weight: 500;
+  }
+
+  h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(40px, 9vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 32px;
+    color: var(--fg);
+  }
+
+  .meta {
+    font-family: var(--serif);
+    font-size: 19px;
+    color: var(--fg-muted);
+    line-height: 1.55;
+    margin: 0;
+    letter-spacing: 0;
+  }
+
+  .meta span + span::before {
+    content: "·";
+    margin: 0 10px;
+    color: var(--fg-dim);
+  }
+
+  /* Sections */
+  section {
+    padding: 72px 0;
+  }
+
+  section:has(.agenda) {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin: 0 0 24px;
+  }
+
+  /* Welcome */
+  .welcome p {
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--fg);
+    margin: 0;
+    letter-spacing: -0.005em;
+  }
+
+  /* Agenda */
+  .agenda {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 20px;
+    padding: 24px 0;
+    border-top: 1px solid var(--rule);
+    align-items: baseline;
+  }
+
+  .item .time {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--fg-muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+  }
+
+  .item .body {
+    min-width: 0;
+  }
+
+  .item .title {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+  }
+
+  .item .speaker {
+    display: block;
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+    color: var(--fg);
+    margin-top: 10px;
+    font-style: normal;
+  }
+
+  /* Soft / break items: doors, breaks, party */
+  .item.soft .title {
+    font-family: var(--serif);
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    font-style: italic;
+    color: var(--fg-muted);
+    line-height: 1.4;
+  }
+
+  /* Speaker links */
+  .speaker a,
+  .meta a,
+  .address a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 1px;
+  }
+
+  .speaker a:hover,
+  .meta a:hover,
+  .address a:hover {
+    color: var(--fg);
+    border-bottom-color: var(--accent);
+  }
+
+  /* Venue */
+  .address {
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0 0 32px;
+    color: var(--fg);
+  }
+
+  .floorplan {
+    margin: 0 0 32px;
+    border: 1px solid var(--rule-strong);
+    background: var(--bg);
+    overflow: hidden;
+    padding: 0;
+  }
+
+  .floorplan img {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: invert(1) hue-rotate(180deg);
+  }
+
+  /* Room key */
+  .rooms {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 24px;
+  }
+
+  .rooms > div {
+    min-width: 0;
+  }
+
+  .rooms dt {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: 4px;
+    font-weight: 500;
+  }
+
+  .rooms dd {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 19px;
+    color: var(--fg);
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+  }
+
+  /* Wi-Fi block (utility, sits near the top) */
+  .wifi {
+    padding: 32px 0 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .wifi dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .wifi dt {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+
+  .wifi dd {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 16px;
+    color: var(--fg);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  /* Footer */
+  footer {
+    padding: 64px 0 0;
+    text-align: center;
+  }
+
+  .wordmark {
+    font-family: var(--sans);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg);
+  }
+
+  /* Wider screens */
+  @media (min-width: 720px) {
+    body { padding: 0 32px; }
+    .wrap { padding: 96px 0 128px; }
+    .item { grid-template-columns: 88px 1fr; gap: 32px; }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    a { transition: color 120ms ease; }
+  }
+
+  a:hover { color: var(--accent); }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--bg);
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <p class="label">Modo Energy</p>
+    <h1>Summer Sessions&nbsp;'26</h1>
+    <p class="meta">
+      <span>Thursday 11 June 2026</span>
+      <span><a href="https://www.google.com/maps/place/Protein+Studios+Shoreditch/@51.5246166,-0.0783859,17z" target="_blank" rel="noopener">Protein Studios</a></span>
+      <span>London</span>
+    </p>
+  </header>
+
+  <section aria-labelledby="agenda-h">
+    <h2 id="agenda-h">Agenda</h2>
+    <ol class="agenda">
+
+      <li class="item soft">
+        <span class="time">13:00</span>
+        <div class="body">
+          <p class="title">Doors open</p>
+        </div>
+      </li>
+
+      <li class="item">
+        <span class="time">14:00</span>
+        <div class="body">
+          <p class="title">Opening remarks</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Quentin%20Scrimshire%20Modo" target="_blank" rel="noopener">Quentin Scrimshire</a> | Modo Energy</span>
+        </div>
+      </li>
+
+      <li class="item featured">
+        <span class="time">14:05</span>
+        <div class="body">
+          <p class="title">Keynote</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Michael%20Liebreich" target="_blank" rel="noopener">Michael Liebreich</a></span>
+        </div>
+      </li>
+
+      <li class="item">
+        <span class="time">14:35</span>
+        <div class="body">
+          <p class="title">Great Britain</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Robyn%20Lucas%20Modo" target="_blank" rel="noopener">Robyn Lucas</a> | Modo Energy</span>
+        </div>
+      </li>
+
+      <li class="item soft">
+        <span class="time">14:50</span>
+        <div class="body">
+          <p class="title">Break</p>
+        </div>
+      </li>
+
+      <li class="item featured">
+        <span class="time">15:10</span>
+        <div class="body">
+          <p class="title">Fireside Chat</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Stuart%20Jackson%20Octopus" target="_blank" rel="noopener">Stuart Jackson</a> | Octopus Energy<br><a href="https://www.linkedin.com/search/results/people/?keywords=Quentin%20Scrimshire%20Modo" target="_blank" rel="noopener">Quentin Scrimshire</a> | Modo Energy</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <span class="time">15:55</span>
+        <div class="body">
+          <p class="title">Germany</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Till%20Stehr%20Modo" target="_blank" rel="noopener">Till Stehr</a> | Modo Energy</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <span class="time">16:10</span>
+        <div class="body">
+          <p class="title">Tolling: an offtaker's perspective</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Rimshah%20Javed%20Danske" target="_blank" rel="noopener">Rimshah Javed</a> | Danske Commodities</span>
+        </div>
+      </li>
+
+      <li class="item soft">
+        <span class="time">16:25</span>
+        <div class="body">
+          <p class="title">Break</p>
+        </div>
+      </li>
+
+      <li class="item">
+        <span class="time">17:00</span>
+        <div class="body">
+          <p class="title">Guest session <span style="color:var(--fg-dim)">(TBC)</span></p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Amit%20Gudka%20Field" target="_blank" rel="noopener">Amit Gudka</a> | Field</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <span class="time">17:15</span>
+        <div class="body">
+          <p class="title">Europe+</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Ed%20Porter%20Modo" target="_blank" rel="noopener">Ed Porter</a> | Modo Energy</span>
+        </div>
+      </li>
+
+      <li class="item">
+        <span class="time">17:30</span>
+        <div class="body">
+          <p class="title">Closing remarks</p>
+          <span class="speaker"><a href="https://www.linkedin.com/search/results/people/?keywords=Quentin%20Scrimshire%20Modo" target="_blank" rel="noopener">Quentin Scrimshire</a> | Modo Energy</span>
+        </div>
+      </li>
+
+      <li class="item soft">
+        <span class="time">17:45</span>
+        <div class="body">
+          <p class="title">Party</p>
+        </div>
+      </li>
+
+    </ol>
+  </section>
+
+  <section aria-labelledby="venue-h">
+    <h2 id="venue-h">Venue</h2>
+    <p class="address">
+      <a href="https://www.google.com/maps/place/Protein+Studios+Shoreditch/@51.5246166,-0.0783859,17z" target="_blank" rel="noopener">Protein Studios</a><br>
+      31 New Inn Yard<br>
+      London EC2A 3EY
+    </p>
+    <figure class="floorplan">
+      <img src="floorplan.png" alt="Protein Studios floorplan with venue labels">
+    </figure>
+
+    <dl class="rooms">
+      <div><dt>Studio 1</dt><dd>Bar</dd></div>
+      <div><dt>Studio 2</dt><dd>The Ko Bar</dd></div>
+      <div><dt>Studio 3</dt><dd>Cloakroom</dd></div>
+      <div><dt>Studio 4</dt><dd>Main Stage</dd></div>
+      <div><dt>Studio 5</dt><dd>Casual seating</dd></div>
+      <div><dt>Studio 6</dt><dd>Food &amp; drink</dd></div>
+    </dl>
+  </section>
+
+  <footer>
+    <p class="wordmark">MODOENERGY</p>
+  </footer>
+
+</main>
+</body>
+</html>
