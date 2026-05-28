@@ -67,13 +67,15 @@
   }
 
   .label {
-    font-family: var(--sans);
-    font-size: 11px;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--fg-muted);
     margin: 0 0 40px;
-    font-weight: 500;
+    display: block;
+  }
+
+  .label img {
+    display: block;
+    width: 130px;
+    height: auto;
+    opacity: 0.85;
   }
 
   h1 {
@@ -305,12 +307,14 @@
   }
 
   .wordmark {
-    font-family: var(--sans);
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--fg);
+    margin: 0;
+    line-height: 0;
+  }
+
+  .wordmark img {
+    width: 200px;
+    height: auto;
+    display: inline-block;
   }
 
   /* Wider screens */
@@ -336,12 +340,11 @@
 <main class="wrap">
 
   <header class="hero">
-    <p class="label">Modo Energy</p>
+    <p class="label"><img src="modo-logo.png?v=1" alt="Modo Energy"></p>
     <h1>Summer Sessions&nbsp;'26</h1>
     <p class="meta">
       <span>Thursday 11 June 2026</span>
       <span><a href="https://www.google.com/maps/place/Protein+Studios+Shoreditch/@51.5246166,-0.0783859,17z" target="_blank" rel="noopener">Protein Studios</a></span>
-      <span>London</span>
     </p>
   </header>
 
@@ -474,7 +477,7 @@
   </section>
 
   <footer>
-    <p class="wordmark">MODOENERGY</p>
+    <p class="wordmark"><img src="modo-logo.png?v=1" alt="Modo Energy"></p>
   </footer>
 
 </main>
